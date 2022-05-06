@@ -1,0 +1,26 @@
+package kk.it.array;
+
+class SortArrayInAscendingOrderUsingForLoop {
+
+    public static int[] sortedArray(int[] arr){
+        int temp;
+        for(int i=0; i<arr.length; i++){
+            for(int j=i+1; j<arr.length; j++){
+               if(arr[i] > arr[j]){
+                  temp = arr[i];
+                  arr[i] = arr[j];
+                  arr[j] = temp;
+               }
+            }
+        }
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{34, 54, 87, 0, 3, 1, 6};
+        int[] sortedArray = SortArrayInAscendingOrderUsingForLoop.sortedArray(arr);
+        for (int i=0; i< sortedArray.length; i++){
+            System.out.println(sortedArray[i]);
+        }
+    }
+}
